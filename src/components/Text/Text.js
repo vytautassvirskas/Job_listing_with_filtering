@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Text.module.scss";
+import style from "./Text.module.scss";
 
-const Text = () => {
-  return <h1 className={styles.text}>laba diena</h1>;
+const Text = (props) => {
+  return <span className={style[`${props.className}`]}>{props.children}</span>;
 };
 
 export default Text;

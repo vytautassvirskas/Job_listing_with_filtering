@@ -1,4 +1,61 @@
+@import "../../assets/style/variables.scss";
+
 .text {
-  font-size: 28px;
-  background-color: tomato;
+  display: inline-block;
+  color: $c-first;
+  transition: all 0.2s ease-in-out;
+  &--company {
+    @extend .text;
+    margin-right: 10px;
+  }
+  &--new {
+    @extend .text;
+    padding: 5px;
+    margin-right: 5px;
+    font-size: $fs-secondary;
+    text-transform: uppercase;
+    color: $c-third;
+    background-color: $c-first;
+    border-radius: 10px;
+  }
+  &--featured {
+    @extend .text;
+    padding: 5px;
+    margin-right: 5px;
+    font-size: $fs-secondary;
+    text-transform: uppercase;
+    color: $c-sixth;
+    background-color: $c-fifth;
+    border-radius: 10px;
+  }
+
+  &--position {
+    @extend .text;
+    font-size: $fs-tertiary;
+    font-weight: $fw-bold;
+    color: $c-fifth;
+    cursor: pointer;
+    &:hover {
+      color: $c-first;
+    }
+  }
+
+  &--details {
+    @extend .text;
+    margin-right: 15px;
+    color: $c-fourth;
+  }
+
+  &--filter {
+    @extend .text;
+    background-color: $c-second;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    &:hover {
+      color: $c-sixth;
+      background-color: $c-first;
+    }
+  }
 }

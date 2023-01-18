@@ -1,12 +1,19 @@
 /*colors*/
-$c-primary: hsl(180, 29%, 50%);
-$c-background: hsl(180, 52%, 96%);
-$c-tablets: hsl(180, 31%, 95%);
-$c-dark: hsl(180, 8%, 52%);
-$c-veryDark: hsl(180, 14%, 20%);
+
+$c-first: hsl(180, 29%, 50%);
+/* background */
+$c-second: hsl(180, 52%, 96%);
+/*Filter Tablets*/
+$c-third: hsl(180, 31%, 95%);
+/* other */
+$c-fourth: hsl(180, 8%, 52%);
+$c-fifth: hsl(180, 14%, 20%);
+$c-sixth: hsl(0, 0%, 100%);
 
 /*font size*/
 $fs-primary: 15px;
+$fs-secondary: 12px;
+$fs-tertiary: 18px;
 
 /*font family*/
 $ff-primary: "League Spartan", sans-serif;
