@@ -1,0 +1,27 @@
+@import "../../assets/style/variables.scss";
+
+.filtering {
+  position: absolute;
+  top: -110px;
+  width: 100%;
+  background-color: $c-sixth;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  border-radius: 5px;
+  &__filters {
+    display: flex;
+  }
+  &__clear {
+    color: $c-fourth;
+    font-weight: $fw-bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: $c-first;
+    }
+  }
+}

@@ -8,8 +8,9 @@ const Card = ({ data }) => {
 
   return (
     <div className={!data.featured ? style.card : style[`card--featured`]}>
+      {/* left card part */}
       <div className={style.card__company}>
-        <img className={style.card__logo} src={data.logo}></img>
+        <img className={style.card__logo} src={data.logo} alt="logo"></img>
         <div className={style.card__info}>
           <p>
             <Text className="text--company">{data.company}</Text>
@@ -28,27 +29,32 @@ const Card = ({ data }) => {
           </p>
         </div>
       </div>
+      {/* rigth card part */}
       <div className={style.card__skills}>
         <Text className="text--filter">{data.role}</Text>
         <Text className="text--filter">{data.level}</Text>
+
         {/* language array map */}
-        {data.languages.map((skill, i) => {
-          console.log("language mapina");
-          return (
-            <Text key={i} className="text--filter">
-              {skill}
-            </Text>
-          );
-        })}
+        {data.languages.length > 0 &&
+          data.languages.map((skill, i) => {
+            console.log("language mapina");
+            return (
+              <Text key={i} className="text--filter">
+                {skill}
+              </Text>
+            );
+          })}
+
         {/* tools array map */}
-        {data.tools.map((skill, i) => {
-          console.log("tools mapina");
-          return (
-            <Text key={i} className="text--filter">
-              {skill}
-            </Text>
-          );
-        })}
+        {data.tools.length > 0 &&
+          data.tools.map((skill, i) => {
+            console.log("tools mapina");
+            return (
+              <Text key={i} className="text--filter">
+                {skill}
+              </Text>
+            );
+          })}
       </div>
     </div>
   );
