@@ -1,0 +1,8 @@
+@import "../../assets/style/variables.scss";
+
+.header {
+  background-color: $c-primary;
+  &__img {
+    width: 100%;
+  }
+}
