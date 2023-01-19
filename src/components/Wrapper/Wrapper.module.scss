@@ -1,5 +1,10 @@
 .wrapper {
-  max-width: 80%;
-  margin: 80px auto;
   position: relative;
+  max-width: 750px;
+  margin: 80px auto 0;
+  padding-bottom: 80px;
+  @media (width<=768px) {
+    max-width: 90%;
+    padding-bottom: 20px;
+  }
 }

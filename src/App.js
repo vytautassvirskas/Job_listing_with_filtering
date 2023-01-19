@@ -27,7 +27,6 @@ function App() {
           });
 
           if (allIncluded) {
-            console.log("sita atitinka:", position.company);
             return true;
           }
         })
