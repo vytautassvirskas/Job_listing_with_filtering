@@ -13,30 +13,39 @@ function App() {
 
   useEffect(() => {
     if (filtersArr.length > 0) {
-      console.log(
-        "data filtravimas:",
-        data.filter((position) => {
-          // return position.role === "Frontend";
-          return filtersArr.includes(position.role)
+      setData(
+        json.filter((position) => {
+          const skillsArr = [
+            position.role,
+            position.level,
+            ...position.languages,
+            ...position.tools,
+          ];
+
+          const allIncluded = filtersArr.every((skill) => {
+            return skillsArr.includes(skill);
+          });
+
+          if (allIncluded) {
+            console.log("sita atitinka:", position.company);
+            return true;
+          }
         })
       );
-
-      // setData(() => {
-      //   data.filter((position) => {
-      //     filtersArr.includes(position.role);
-      //   });
-      // });
+      return;
     }
+
+    setData(json);
   }, [filtersArr]);
 
   //check filtersArr
   useEffect(() => {
-    console.log("filtersArr array: ", filtersArr);
+    console.log("filtersArr state array: ", filtersArr);
   }, [filtersArr]);
 
   //data tikrinu
   useEffect(() => {
-    console.log("data:", data);
+    console.log("data state:", data);
   }, [data]);
 
   return (
@@ -44,7 +53,10 @@ function App() {
       <Header></Header>
       <Wrapper>
         {filtersArr.length === 0 ? null : (
-          <FiltersCard filtersArr={filtersArr} setFiltersArr={setFiltersArr}></FiltersCard>
+          <FiltersCard
+            filtersArr={filtersArr}
+            setFiltersArr={setFiltersArr}
+          ></FiltersCard>
         )}
         {data &&
           data.map((position, i) => {

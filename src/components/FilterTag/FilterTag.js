@@ -1,5 +1,4 @@
 import React from "react";
-import Text from "../Text/Text";
 import style from "./FilterTag.module.scss";
 
 const FilterTag = ({ filter, filtersArr, setFiltersArr }) => {

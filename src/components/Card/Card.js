@@ -15,28 +15,28 @@ const Card = ({ data, filtersArr, setFiltersArr }) => {
 
   return (
     <div className={!data.featured ? style.card : style[`card--featured`]}>
-      {/* left card part */}
+      {/* left side of the card */}
       <div className={style.card__company}>
         <img className={style.card__logo} src={data.logo} alt="logo"></img>
         <div className={style.card__info}>
-          <p>
+          <div>
             <Text className="text--company">{data.company}</Text>
             {data.new && <Text className="text--new">{"new"}</Text>}
             {data.featured && (
               <Text className="text--featured">{"featured"}</Text>
             )}
-          </p>
+          </div>
           <Text className="text--position">{data.position}</Text>
-          <p>
+          <div>
             <Text className="text--details">{data.postedAt}</Text>
             <Text className="text--details">&middot;</Text>
             <Text className="text--details">{data.contract}</Text>
             <Text className="text--details">&middot;</Text>
             <Text className="text--details">{data.location}</Text>
-          </p>
+          </div>
         </div>
       </div>
-      {/* rigth card part */}
+      {/* right side of the card */}
       <div className={style.card__skills}>
         <Text className="text--filter" onClick={() => handleAdd(data.role)}>
           {data.role}
