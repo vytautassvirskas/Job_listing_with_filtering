@@ -17,15 +17,11 @@
     width: 22px;
     height: 22px;
     border: none;
-    color: tomato;
     background-color: $c-first;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     &:hover {
       background-color: $c-fifth;
     }
-  }
-  &__close svg path {
-    stroke: yellow;
   }
 }

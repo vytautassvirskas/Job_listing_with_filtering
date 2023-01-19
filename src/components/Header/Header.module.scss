@@ -5,7 +5,7 @@
   height: 150px;
   background-image: url("../../../public/images/bg-header-desktop.svg");
   background-repeat: repeat-x;
-  @media (width <=768px) {
+  @media (width <=$rd-mobile) {
     height: 150px;
     background-image: url("../../../public/images/bg-header-mobile.svg");
   }
