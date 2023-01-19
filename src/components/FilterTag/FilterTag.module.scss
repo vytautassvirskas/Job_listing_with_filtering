@@ -1,0 +1,31 @@
+@import "../../assets/style/variables.scss";
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $c-second;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &__name {
+    display: inline-block;
+    padding: 0 8px 0 5px;
+    color: $c-first;
+  }
+  &__close {
+    width: 22px;
+    height: 22px;
+    border: none;
+    color: tomato;
+    background-color: $c-first;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $c-fifth;
+    }
+  }
+  &__close svg path {
+    stroke: yellow;
+  }
+}

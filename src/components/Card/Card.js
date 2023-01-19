@@ -1,10 +1,17 @@
 import React from "react";
+import FiltersCard from "../FiltersCard/FiltersCard";
 import Text from "../Text/Text";
 
 import style from "./Card.module.scss";
 
-const Card = ({ data }) => {
-  // console.log(data);
+const Card = ({ data, filtersArr, setFiltersArr }) => {
+  const handleAdd = (skill) => {
+    if (!filtersArr.includes(skill)) {
+      setFiltersArr((prevValue) => {
+        return [...prevValue, skill];
+      });
+    }
+  };
 
   return (
     <div className={!data.featured ? style.card : style[`card--featured`]}>
@@ -31,30 +38,42 @@ const Card = ({ data }) => {
       </div>
       {/* rigth card part */}
       <div className={style.card__skills}>
-        <Text className="text--filter">{data.role}</Text>
-        <Text className="text--filter">{data.level}</Text>
+        <Text className="text--filter" onClick={() => handleAdd(data.role)}>
+          {data.role}
+        </Text>
+        <Text className="text--filter" onClick={() => handleAdd(data.level)}>
+          {data.level}
+        </Text>
 
         {/* language array map */}
-        {data.languages.length > 0 &&
-          data.languages.map((skill, i) => {
-            console.log("language mapina");
-            return (
-              <Text key={i} className="text--filter">
-                {skill}
-              </Text>
-            );
-          })}
+        {data.languages.length === 0
+          ? null
+          : data.languages.map((skill, i) => {
+              return (
+                <Text
+                  key={i}
+                  className="text--filter"
+                  onClick={() => handleAdd(skill)}
+                >
+                  {skill}
+                </Text>
+              );
+            })}
 
         {/* tools array map */}
-        {data.tools.length > 0 &&
-          data.tools.map((skill, i) => {
-            console.log("tools mapina");
-            return (
-              <Text key={i} className="text--filter">
-                {skill}
-              </Text>
-            );
-          })}
+        {data.tools.length === 0
+          ? null
+          : data.tools.map((skill, i) => {
+              return (
+                <Text
+                  key={i}
+                  className="text--filter"
+                  onClick={() => handleAdd(skill)}
+                >
+                  {skill}
+                </Text>
+              );
+            })}
       </div>
     </div>
   );

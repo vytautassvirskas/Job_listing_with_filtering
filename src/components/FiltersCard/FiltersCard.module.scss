@@ -1,6 +1,6 @@
 @import "../../assets/style/variables.scss";
 
-.filtering {
+.filters-card {
   position: absolute;
   top: -110px;
   width: 100%;
@@ -10,10 +10,13 @@
   align-items: center;
   padding: 25px;
   border-radius: 5px;
-  &__filters {
+  &__list {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   &__clear {
+    margin-left: auto;
     color: $c-fourth;
     font-weight: $fw-bold;
     background-color: transparent;
@@ -22,6 +25,7 @@
     transition: all 0.2s ease-in-out;
     &:hover {
       color: $c-first;
+      text-decoration: underline;
     }
   }
 }
