@@ -38,10 +38,18 @@ const Card = ({ data, filtersArr, setFiltersArr }) => {
       </div>
       {/* right side of the card */}
       <div className={style.card__skills}>
-        <Text className="text--filter" onClick={() => handleAdd(data.role)}>
+        <Text
+          className="text--filter"
+          onClick={() => handleAdd(data.role)}
+          btn={true}
+        >
           {data.role}
         </Text>
-        <Text className="text--filter" onClick={() => handleAdd(data.level)}>
+        <Text
+          className="text--filter"
+          onClick={() => handleAdd(data.level)}
+          btn={true}
+        >
           {data.level}
         </Text>
 
@@ -54,6 +62,7 @@ const Card = ({ data, filtersArr, setFiltersArr }) => {
                   key={i}
                   className="text--filter"
                   onClick={() => handleAdd(skill)}
+                  btn={true}
                 >
                   {skill}
                 </Text>
@@ -69,6 +78,7 @@ const Card = ({ data, filtersArr, setFiltersArr }) => {
                   key={i}
                   className="text--filter"
                   onClick={() => handleAdd(skill)}
+                  btn={true}
                 >
                   {skill}
                 </Text>

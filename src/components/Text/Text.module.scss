@@ -50,6 +50,7 @@
     @extend .text;
     background-color: $c-second;
     padding: 5px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     &:hover {
